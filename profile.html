@@ -1,76 +1,128 @@
-<div class="profile-page" style="background-color: #f4f7f6; min-height: 100vh; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-    
-    <div style="background-color: white; padding: 20px; border-bottom: 1px solid #e0e0e0; margin-bottom: 15px;">
-        <div style="display: flex; align-items: center; gap: 15px;">
-            <div style="width: 60px; height: 60px; background: #eee; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid #4caf50;">
-                <span style="font-size: 30px;">👤</span>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | 777WIN</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body { background-color: #f4f7f6; }
+        /* কাস্টম শ্যাডো এবং গ্রিড ফিক্স */
+        .menu-card { 
+            transition: all 0.3s ease;
+        }
+        .menu-card:hover { transform: translateY(-3px); }
+    </style>
+</head>
+<body class="pb-20">
+
+    <header class="bg-white border-b sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="text-gray-500"><i class="fa-solid fa-arrow-left text-lg"></i></a>
+                <h1 class="text-xl font-black text-green-600 italic">777WIN</h1>
             </div>
-            <div style="flex-grow: 1;">
-                <h2 style="margin: 0; font-size: 18px; color: #333;">ID: alif378</h2>
-                <div style="display: flex; align-items: center; gap: 5px; margin-top: 5px;">
-                    <span style="background: #e8f5e9; color: #2e7d32; font-size: 10px; padding: 2px 8px; border-radius: 10px; font-weight: bold;">VIP 0</span>
-                    <span style="color: #888; font-size: 12px;">পয়েন্টস (VP): 0</span>
+            <button class="bg-green-600 text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-lg">Live Chat</button>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto p-4">
+        
+        <div class="bg-white rounded-3xl p-6 shadow-sm border border-gray-100 mb-6 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center border-2 border-green-500 overflow-hidden">
+                    <i class="fa-solid fa-user text-3xl text-gray-400"></i>
+                </div>
+                <div>
+                    <h2 class="text-lg font-black text-gray-800">ID: alif378</h2>
+                    <div class="flex items-center gap-2 mt-1">
+                        <span class="bg-green-100 text-green-700 text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-tighter">VIP 0</span>
+                        <span class="text-gray-400 text-xs font-medium italic">পয়েন্ট (VP): 0</span>
+                    </div>
                 </div>
             </div>
-            <button style="background: linear-gradient(to right, #4caf50, #81c784); color: white; border: none; padding: 8px 15px; border-radius: 20px; font-size: 12px; font-weight: bold; cursor: pointer;">মাই ভিআইপি</button>
+            <button class="bg-yellow-400 text-yellow-900 px-4 py-2 rounded-xl text-[10px] font-black uppercase shadow-sm">My VIP</button>
         </div>
-    </div>
 
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 0 15px; margin-bottom: 20px;">
-        <div style="background: white; padding: 15px; border-radius: 12px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-            <div style="font-size: 12px; color: #777;">মেইন ওয়ালেট 🔄</div>
-            <div style="font-size: 20px; font-weight: bold; color: #333; margin-top: 5px;">৳ ০.০০</div>
-        </div>
-        <div style="background: white; padding: 15px; border-radius: 12px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-            <div style="font-size: 12px; color: #777;">বোনাস ওয়ালেট 🔄</div>
-            <div style="font-size: 20px; font-weight: bold; color: #4caf50; margin-top: 5px;">৳ ০.০০</div>
-        </div>
-    </div>
-
-    <div style="padding: 0 15px; display: flex; flex-direction: column; gap: 15px;">
-        
-        <div style="background: white; border-radius: 15px; padding: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-            <h3 style="font-size: 14px; color: #333; margin-bottom: 15px; border-left: 4px solid #4caf50; padding-left: 10px;">तহবিল</h3>
-            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; text-align: center;">
-                <div class="menu-item"><div class="icon-circle">📥</div><span class="label">ডিপোজিট</span></div>
-                <div class="menu-item"><div class="icon-circle">📤</div><span class="label">উইথড্র</span></div>
-                <div class="menu-item"><div class="icon-circle">📜</div><span class="label">রেকর্ড</span></div>
-                <div class="menu-item"><div class="icon-circle">💎</div><span class="label">বোনাস</span></div>
+        <div class="grid grid-cols-2 gap-4 mb-6">
+            <div class="bg-white p-5 rounded-3xl border border-gray-100 shadow-sm text-center">
+                <p class="text-[10px] font-black text-gray-400 uppercase flex items-center justify-center gap-1">
+                    মেইন ওয়ালেট <i class="fa-solid fa-rotate text-[8px]"></i>
+                </p>
+                <h3 class="text-xl font-black text-gray-800 mt-2">৳ ০.০০</h3>
+            </div>
+            <div class="bg-white p-5 rounded-3xl border border-gray-100 shadow-sm text-center">
+                <p class="text-[10px] font-black text-gray-400 uppercase flex items-center justify-center gap-1">
+                    বোনাস ওয়ালেট <i class="fa-solid fa-rotate text-[8px]"></i>
+                </p>
+                <h3 class="text-xl font-black text-green-600 mt-2">৳ ০.০০</h3>
             </div>
         </div>
 
-        <div style="background: white; border-radius: 15px; padding: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-            <h3 style="font-size: 14px; color: #333; margin-bottom: 15px; border-left: 4px solid #4caf50; padding-left: 10px;">প্রোফাইল</h3>
-            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; text-align: center;">
-                <div class="menu-item"><div class="icon-circle">👤</div><span class="label">তথ্য</span></div>
-                <div class="menu-item"><div class="icon-circle">🔒</div><span class="label">পাসওয়ার্ড</span></div>
-                <div class="menu-item"><div class="icon-circle">✉️</div><span class="label">ইনবক্স</span></div>
-                <div class="menu-item"><div class="icon-circle">📢</div><span class="label">রেফার</span></div>
+        <div class="space-y-6">
+            
+            <div class="bg-white rounded-[2rem] p-6 shadow-sm border border-gray-50">
+                <h3 class="text-xs font-black text-gray-800 uppercase mb-6 border-l-4 border-green-500 pl-3">তহবিল</h3>
+                <div class="grid grid-cols-4 sm:grid-cols-4 gap-4 text-center">
+                    <div class="menu-card group">
+                        <div class="w-12 h-12 bg-green-50 rounded-2xl flex items-center justify-center mx-auto mb-2 text-green-600 group-active:scale-90 transition-transform shadow-sm"><i class="fa-solid fa-wallet text-lg"></i></div>
+                        <span class="text-[10px] font-bold text-gray-500 uppercase">ডিপোজিট</span>
+                    </div>
+                    <div class="menu-card group">
+                        <div class="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-2 text-blue-600 group-active:scale-90 transition-transform shadow-sm"><i class="fa-solid fa-money-bill-transfer text-lg"></i></div>
+                        <span class="text-[10px] font-bold text-gray-500 uppercase">উইথড্র</span>
+                    </div>
+                    <div class="menu-card group">
+                        <div class="w-12 h-12 bg-orange-50 rounded-2xl flex items-center justify-center mx-auto mb-2 text-orange-600 group-active:scale-90 transition-transform shadow-sm"><i class="fa-solid fa-receipt text-lg"></i></div>
+                        <span class="text-[10px] font-bold text-gray-500 uppercase">রেকর্ড</span>
+                    </div>
+                    <div class="menu-card group">
+                        <div class="w-12 h-12 bg-pink-50 rounded-2xl flex items-center justify-center mx-auto mb-2 text-pink-600 group-active:scale-90 transition-transform shadow-sm"><i class="fa-solid fa-gift text-lg"></i></div>
+                        <span class="text-[10px] font-bold text-gray-500 uppercase">বোনাস</span>
+                    </div>
+                </div>
             </div>
+
+            <div class="bg-white rounded-[2rem] p-6 shadow-sm border border-gray-50">
+                <h3 class="text-xs font-black text-gray-800 uppercase mb-6 border-l-4 border-green-500 pl-3">প্রোফাইল</h3>
+                <div class="grid grid-cols-4 gap-4 text-center">
+                    <div class="menu-card group">
+                        <div class="w-12 h-12 bg-indigo-50 rounded-2xl flex items-center justify-center mx-auto mb-2 text-indigo-600 shadow-sm"><i class="fa-solid fa-user-gear text-lg"></i></div>
+                        <span class="text-[10px] font-bold text-gray-500 uppercase">তথ্য</span>
+                    </div>
+                    <div class="menu-card group">
+                        <div class="w-12 h-12 bg-red-50 rounded-2xl flex items-center justify-center mx-auto mb-2 text-red-600 shadow-sm"><i class="fa-solid fa-shield-halved text-lg"></i></div>
+                        <span class="text-[10px] font-bold text-gray-500 uppercase">নিরাপত্তা</span>
+                    </div>
+                    <div class="menu-card group">
+                        <div class="w-12 h-12 bg-purple-50 rounded-2xl flex items-center justify-center mx-auto mb-2 text-purple-600 shadow-sm"><i class="fa-solid fa-envelope text-lg"></i></div>
+                        <span class="text-[10px] font-bold text-gray-500 uppercase">ইনবক্স</span>
+                    </div>
+                    <div class="menu-card group">
+                        <div class="w-12 h-12 bg-cyan-50 rounded-2xl flex items-center justify-center mx-auto mb-2 text-cyan-600 shadow-sm"><i class="fa-solid fa-users text-lg"></i></div>
+                        <span class="text-[10px] font-bold text-gray-500 uppercase">রেফার</span>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
-    </div>
-</div>
+        <button class="w-full mt-10 py-5 bg-red-50 text-red-500 font-black uppercase tracking-widest rounded-2xl border-2 border-red-100 hover:bg-red-500 hover:text-white transition-all">
+            Secure Logout
+        </button>
 
-<style>
-    .icon-circle {
-        background: #f1f8e9;
-        width: 45px;
-        height: 45px;
-        line-height: 45px;
-        border-radius: 50%;
-        margin: 0 auto 8px;
-        font-size: 20px;
-        color: #4caf50;
-        transition: transform 0.2s;
-    }
-    .menu-item:active .icon-circle {
-        transform: scale(0.9);
-        background: #dcedc8;
-    }
-    .label {
-        font-size: 11px;
-        color: #555;
-        display: block;
-    }
-</style>
+    </main>
+
+    <nav class="fixed bottom-0 left-0 right-0 bg-white border-t h-16 flex justify-around items-center px-4 z-[3000] shadow-[0_-5px_15px_rgba(0,0,0,0.05)]">
+        <div class="max-w-4xl w-full flex justify-around items-center">
+            <a href="index.html" class="flex flex-col items-center text-gray-400"><i class="fa-solid fa-house"></i><span class="text-[9px] font-black uppercase mt-1">Home</span></a>
+            <div class="flex flex-col items-center text-gray-400"><i class="fa-solid fa-bolt"></i><span class="text-[9px] font-black uppercase mt-1">Live</span></div>
+            <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white -mt-8 border-4 border-[#f4f7f6] shadow-lg"><i class="fa-solid fa-plus text-xl"></i></div>
+            <div class="flex flex-col items-center text-gray-400"><i class="fa-solid fa-wallet"></i><span class="text-[9px] font-black uppercase mt-1">Wallet</span></div>
+            <div class="flex flex-col items-center text-green-600"><i class="fa-solid fa-user-gear"></i><span class="text-[9px] font-black uppercase mt-1">Account</span></div>
+        </div>
+    </nav>
+
+</body>
+</html>
