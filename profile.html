@@ -1,48 +1,51 @@
-<div class="profile-container" style="background-color: #1a2c38; color: white; font-family: sans-serif; padding: 15px; border-radius: 10px; max-width: 400px; margin: auto;">
+<div class="profile-page" style="background-color: #f4f7f6; min-height: 100vh; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
     
-    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
-        <div style="display: flex; align-items: center; gap: 10px;">
-            <div style="width: 50px; height: 50px; background: #34495e; border-radius: 50%; border: 2px solid #f39c12; display: flex; align-items: center; justify-content: center;">
-                <span style="font-size: 24px;">👤</span>
+    <div style="background-color: white; padding: 20px; border-bottom: 1px solid #e0e0e0; margin-bottom: 15px;">
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <div style="width: 60px; height: 60px; background: #eee; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid #4caf50;">
+                <span style="font-size: 30px;">👤</span>
             </div>
-            <div>
-                <div style="font-weight: bold; font-size: 16px;">ID: alif378</div>
-                <div style="font-size: 12px; color: #bdc3c7;">ভিআইপি পয়েন্ট (VP) <span style="color: #f39c12;">0</span></div>
+            <div style="flex-grow: 1;">
+                <h2 style="margin: 0; font-size: 18px; color: #333;">ID: alif378</h2>
+                <div style="display: flex; align-items: center; gap: 5px; margin-top: 5px;">
+                    <span style="background: #e8f5e9; color: #2e7d32; font-size: 10px; padding: 2px 8px; border-radius: 10px; font-weight: bold;">VIP 0</span>
+                    <span style="color: #888; font-size: 12px;">পয়েন্টস (VP): 0</span>
+                </div>
             </div>
-        </div>
-        <button style="background: #f39c12; border: none; padding: 5px 15px; border-radius: 5px; color: black; font-weight: bold; font-size: 12px;">মাই ভি...</button>
-    </div>
-
-    <div style="display: grid; grid-cols: 2; grid-template-columns: 1fr 1fr; gap: 10px; background: #0f212e; padding: 15px; border-radius: 8px; margin-bottom: 20px; text-align: center; border: 1px solid #2c3e50;">
-        <div style="border-right: 1px solid #2c3e50;">
-            <div style="font-size: 12px; color: #95a5a6;">মেইন ওয়ালেট 🔄</div>
-            <div style="font-size: 18px; font-weight: bold; margin-top: 5px;">৳ ০</div>
-        </div>
-        <div>
-            <div style="font-size: 12px; color: #95a5a6;">বোনাস ওয়ালেট 🔄</div>
-            <div style="font-size: 18px; font-weight: bold; margin-top: 5px; color: #f39c12;">৳ ০</div>
+            <button style="background: linear-gradient(to right, #4caf50, #81c784); color: white; border: none; padding: 8px 15px; border-radius: 20px; font-size: 12px; font-weight: bold; cursor: pointer;">মাই ভিআইপি</button>
         </div>
     </div>
 
-    <div style="display: flex; flex-direction: column; gap: 20px;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 0 15px; margin-bottom: 20px;">
+        <div style="background: white; padding: 15px; border-radius: 12px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+            <div style="font-size: 12px; color: #777;">মেইন ওয়ালেট 🔄</div>
+            <div style="font-size: 20px; font-weight: bold; color: #333; margin-top: 5px;">৳ ০.০০</div>
+        </div>
+        <div style="background: white; padding: 15px; border-radius: 12px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+            <div style="font-size: 12px; color: #777;">বোনাস ওয়ালেট 🔄</div>
+            <div style="font-size: 20px; font-weight: bold; color: #4caf50; margin-top: 5px;">৳ ০.০০</div>
+        </div>
+    </div>
+
+    <div style="padding: 0 15px; display: flex; flex-direction: column; gap: 15px;">
         
-        <div class="menu-group">
-            <h3 style="font-size: 14px; border-left: 4px solid #f39c12; padding-left: 8px; margin-bottom: 15px;">তহবিল</h3>
-            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; text-align: center; font-size: 11px;">
-                <div><div class="icon-box">💰</div>ডিপোজিট</div>
-                <div><div class="icon-box">🏧</div>উইথড্র</div>
-                <div><div class="icon-box">🎁</div>বোনাস</div>
-                <div><div class="icon-box">🎡</div>ফ্রি স্পিন</div>
+        <div style="background: white; border-radius: 15px; padding: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+            <h3 style="font-size: 14px; color: #333; margin-bottom: 15px; border-left: 4px solid #4caf50; padding-left: 10px;">तহবিল</h3>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; text-align: center;">
+                <div class="menu-item"><div class="icon-circle">📥</div><span class="label">ডিপোজিট</span></div>
+                <div class="menu-item"><div class="icon-circle">📤</div><span class="label">উইথড্র</span></div>
+                <div class="menu-item"><div class="icon-circle">📜</div><span class="label">রেকর্ড</span></div>
+                <div class="menu-item"><div class="icon-circle">💎</div><span class="label">বোনাস</span></div>
             </div>
         </div>
 
-        <div class="menu-group">
-            <h3 style="font-size: 14px; border-left: 4px solid #f39c12; padding-left: 8px; margin-bottom: 15px;">আমার প্রচার</h3>
-            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; text-align: center; font-size: 11px;">
-                <div><div class="icon-box">💸</div>বোনাস</div>
-                <div><div class="icon-box">👥</div>রেফার</div>
-                <div><div class="icon-box">🏆</div>বিজয়ী</div>
-                <div style="position: relative;"><div class="icon-box">🔥</div>চ্যালেঞ্জ <span style="position: absolute; top: -5px; right: 10px; background: red; color: white; border-radius: 50%; padding: 0 4px; font-size: 9px;">!</span></div>
+        <div style="background: white; border-radius: 15px; padding: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+            <h3 style="font-size: 14px; color: #333; margin-bottom: 15px; border-left: 4px solid #4caf50; padding-left: 10px;">প্রোফাইল</h3>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; text-align: center;">
+                <div class="menu-item"><div class="icon-circle">👤</div><span class="label">তথ্য</span></div>
+                <div class="menu-item"><div class="icon-circle">🔒</div><span class="label">পাসওয়ার্ড</span></div>
+                <div class="menu-item"><div class="icon-circle">✉️</div><span class="label">ইনবক্স</span></div>
+                <div class="menu-item"><div class="icon-circle">📢</div><span class="label">রেফার</span></div>
             </div>
         </div>
 
@@ -50,14 +53,24 @@
 </div>
 
 <style>
-    .icon-box {
-        background: #2c3e50;
+    .icon-circle {
+        background: #f1f8e9;
         width: 45px;
         height: 45px;
         line-height: 45px;
         border-radius: 50%;
-        margin: 0 auto 5px;
+        margin: 0 auto 8px;
         font-size: 20px;
-        border: 1px solid #34495e;
+        color: #4caf50;
+        transition: transform 0.2s;
+    }
+    .menu-item:active .icon-circle {
+        transform: scale(0.9);
+        background: #dcedc8;
+    }
+    .label {
+        font-size: 11px;
+        color: #555;
+        display: block;
     }
 </style>
