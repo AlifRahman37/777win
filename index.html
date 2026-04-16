@@ -3,346 +3,227 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>BAJIFAIR | Professional Sports Exchange</title>
+    <title>777win | Professional Betting Exchange</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
     <style>
-        /* Exact Colors from your screenshots */
         :root {
-            --primary-dark: #122d2d;      /* Background from */
-            --header-dark: #0f2424;       /* Header area */
-            --bet-bg: #1a3d3d;           /* Table row background */
-            --accent-yellow: #f7bc15;    /* League title bar */
-            --back-blue: #72bbef;        /* Back button */
-            --lay-pink: #f4a5c0;         /* Lay button */
-            --text-gold: #ffcc00;
+            --bg-body: #f1f4f4;
+            --primary-green: #00a859;
+            --league-yellow: #f7bc15;
+            --back-blue: #a5d9fe;
+            --lay-pink: #f9d0d9;
+            --dark-text: #1a1a1a;
         }
 
-        body {
-            background-color: var(--primary-dark);
-            color: white;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            margin: 0;
-            padding-bottom: 70px; /* Space for bottom nav */
-        }
+        body { font-family: 'Roboto', sans-serif; background-color: var(--bg-body); overflow-x: hidden; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        
+        /* Sticky Elements */
+        .sticky-header { position: sticky; top: 0; z-index: 1000; background: white; }
+        .sticky-sub-nav { position: sticky; top: 56px; z-index: 999; background: white; border-bottom: 1px solid #e5e7eb; }
 
-        /* Header Style */
-        .main-header {
-            background-color: var(--header-dark);
-            border-bottom: 1px solid #1e4646;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 15px;
+        /* Custom Buttons from Screenshots */
+        .btn-odds {
+            width: 62px; height: 44px; border-radius: 4px; display: flex;
+            flex-direction: column; align-items: center; justify-content: center;
+            font-size: 13px; font-weight: 900; line-height: 1; border: 1px solid rgba(0,0,0,0.05);
         }
-
-        /* Banner Slider */
-        .banner-container {
-            width: 100%;
-            height: 180px;
-            overflow: hidden;
-            position: relative;
-        }
-        .banner-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Horizontal Menu */
-        .category-menu {
-            display: flex;
-            overflow-x: auto;
-            background-color: #1a3d3d;
-            padding: 10px 0;
-            gap: 5px;
-        }
-        .menu-item {
-            min-width: 75px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            font-size: 11px;
-            color: #9ababa;
-        }
-        .menu-item.active {
-            color: var(--accent-yellow);
-        }
-        .menu-icon {
-            width: 45px;
-            height: 45px;
-            background: #0f2424;
-            border-radius: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 5px;
-            font-size: 20px;
-            border: 1px solid #2a5555;
-        }
-        .menu-item.active .menu-icon {
-            background: var(--accent-yellow);
-            color: black;
-        }
-
-        /* Betting Table */
-        .league-title {
-            background-color: var(--accent-yellow);
-            color: black;
-            font-weight: 800;
-            padding: 8px 12px;
-            font-size: 14px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            text-transform: uppercase;
-        }
-
-        .match-card {
-            background-color: var(--bet-bg);
-            margin-bottom: 2px;
-            padding: 10px;
-        }
-
-        .bet-button {
-            width: 65px;
-            height: 45px;
-            border-radius: 4px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            font-size: 14px;
-            color: #122d2d;
-        }
-        .back { background-color: var(--back-blue); }
-        .lay { background-color: var(--lay-pink); }
-        .odds-val { font-size: 14px; font-weight: 800; }
-        .matched-vol { font-size: 9px; opacity: 0.8; }
-
-        /* Casino Section */
-        .casino-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            padding: 10px;
-        }
-        .casino-item {
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid #2a5555;
-            background: #0f2424;
-        }
-        .casino-img {
-            width: 100%;
-            height: 100px;
-            object-fit: cover;
-        }
-        .casino-label {
-            padding: 5px;
-            text-align: center;
-            font-size: 12px;
-            font-weight: bold;
-        }
-
-        /* Bottom Nav */
-        .bottom-nav {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background-color: #0f2424;
-            display: flex;
-            justify-content: space-around;
-            padding: 10px 0;
-            border-top: 1px solid #1e4646;
-        }
-
-        /* Floating Buttons */
-        .floating-action {
-            position: fixed;
-            right: 15px;
-            bottom: 80px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .f-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-        }
-
-        /* Payment Icons */
-        .payment-footer {
-            background-color: #163636;
-            padding: 15px;
-            margin-top: 20px;
-        }
-        .payment-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-            opacity: 0.7;
-        }
+        .bg-back { background-color: var(--back-blue); color: #0369a1; }
+        .bg-lay { background-color: var(--lay-pink); color: #be185d; }
+        
+        /* Section Styling */
+        .section-container { background: white; margin-top: 8px; border-bottom: 1px solid #e5e7eb; }
+        .card-img { width: 100%; height: 110px; object-fit: cover; border-radius: 8px; }
     </style>
 </head>
-<body>
+<body class="pb-20">
 
-    <header class="main-header">
-        <div class="flex items-center gap-3">
-            <i class="fa-solid fa-bars text-xl text-yellow-500"></i>
-            <span class="text-2xl font-black italic tracking-tighter">BAJIFAIR</span>
+    <header class="sticky-header px-4 py-3 flex justify-between items-center border-b">
+        <div class="flex items-center gap-4">
+            <i class="fa-solid fa-bars text-xl text-gray-700"></i>
+            <h1 class="text-2xl font-black italic tracking-tighter text-green-600">BAJIFAIR</h1>
         </div>
         <div class="flex gap-2">
-            <button class="bg-gray-600 px-4 py-1.5 rounded text-sm font-bold">Sign up</button>
-            <button class="bg-green-600 px-4 py-1.5 rounded text-sm font-bold">Login</button>
+            <button class="px-4 py-1.5 border border-green-600 text-green-600 rounded font-bold text-sm">Sign up</button>
+            <button class="px-4 py-1.5 bg-green-600 text-white rounded font-bold text-sm">Login</button>
         </div>
     </header>
 
-    <div class="banner-container">
-        <img src="https://via.placeholder.com/600x200/ff5733/ffffff?text=BIG+PUNCH+BIG+PRIZE" class="banner-img" alt="Promo">
-        <div class="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1">
-            <span class="w-2 h-2 rounded-full bg-gray-400"></span>
-            <span class="w-6 h-2 rounded-full bg-yellow-500"></span>
-            <span class="w-2 h-2 rounded-full bg-gray-400"></span>
-        </div>
-    </div>
+    <nav class="sticky-sub-nav flex overflow-x-auto no-scrollbar bg-white">
+        <button class="px-5 py-3 text-sm font-bold text-green-600 border-b-2 border-green-600 whitespace-nowrap">Live</button>
+        <button class="px-5 py-3 text-sm font-bold text-gray-500 whitespace-nowrap">Upcoming</button>
+        <button class="px-5 py-3 text-sm font-bold text-gray-500 whitespace-nowrap">Leagues</button>
+        <button class="px-5 py-3 text-sm font-bold text-gray-500 whitespace-nowrap">Parlay</button>
+        <button class="px-5 py-3 text-sm font-bold text-gray-500 whitespace-nowrap">Results</button>
+    </nav>
 
-    <div class="flex bg-[#1a3d3d] border-b border-[#2a5555] overflow-x-auto no-scrollbar">
-        <button class="px-6 py-3 text-sm font-bold border-b-2 border-yellow-500 text-yellow-500">Live</button>
-        <button class="px-6 py-3 text-sm font-bold text-gray-400">Upcoming</button>
-        <button class="px-6 py-3 text-sm font-bold text-gray-400">Leagues</button>
-        <button class="px-6 py-3 text-sm font-bold text-gray-400">Parlay</button>
-    </div>
+    <section class="p-4 bg-white">
+        <div class="bg-gradient-to-r from-blue-500 to-cyan-400 h-44 rounded-2xl flex flex-col items-center justify-center text-white relative shadow-inner">
+            <h2 class="text-3xl font-black italic">BIG PUNCH</h2>
+            <p class="text-yellow-300 font-bold text-lg uppercase tracking-wider">Big Prize</p>
+            <div class="absolute bottom-3 flex gap-1.5">
+                <span class="w-1.5 h-1.5 bg-white/40 rounded-full"></span>
+                <span class="w-5 h-1.5 bg-yellow-400 rounded-full"></span>
+                <span class="w-1.5 h-1.5 bg-white/40 rounded-full"></span>
+            </div>
+        </div>
+    </section>
 
-    <div class="category-menu no-scrollbar">
-        <div class="menu-item">
-            <div class="menu-icon"><i class="fa-solid fa-clover text-pink-500"></i></div>
-            <span>Casino</span>
+    <section class="bg-white py-4 border-b overflow-x-auto no-scrollbar flex px-4 gap-6">
+        <div class="flex flex-col items-center min-w-[60px]">
+            <div class="w-12 h-12 bg-pink-100 rounded-xl flex items-center justify-center text-pink-600 text-xl border border-pink-200">
+                <i class="fa-solid fa-clover"></i>
+            </div>
+            <span class="text-[10px] font-bold mt-2 text-gray-600">Casino</span>
         </div>
-        <div class="menu-item active">
-            <div class="menu-icon"><i class="fa-solid fa-trophy"></i></div>
-            <span>All</span>
+        <div class="flex flex-col items-center min-w-[60px]">
+            <div class="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center text-white text-xl shadow-lg shadow-green-100">
+                <i class="fa-solid fa-trophy"></i>
+            </div>
+            <span class="text-[10px] font-bold mt-2 text-green-600">All</span>
         </div>
-        <div class="menu-item">
-            <div class="menu-icon"><i class="fa-solid fa-baseball-bat-ball"></i></div>
-            <span>Cricket</span>
+        <div class="flex flex-col items-center min-w-[60px]">
+            <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-gray-400 text-xl border border-gray-100">
+                <i class="fa-solid fa-baseball-bat-ball"></i>
+            </div>
+            <span class="text-[10px] font-bold mt-2 text-gray-500">Cricket</span>
         </div>
-        <div class="menu-item">
-            <div class="menu-icon"><i class="fa-solid fa-futbol"></i></div>
-            <span>Soccer</span>
+        <div class="flex flex-col items-center min-w-[60px]">
+            <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-gray-400 text-xl border border-gray-100">
+                <i class="fa-solid fa-futbol"></i>
+            </div>
+            <span class="text-[10px] font-bold mt-2 text-gray-500">Soccer</span>
         </div>
-        <div class="menu-item">
-            <div class="menu-icon"><i class="fa-solid fa-table-tennis-paddle-ball"></i></div>
-            <span>Tennis</span>
+        <div class="flex flex-col items-center min-w-[60px]">
+            <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-gray-400 text-xl border border-gray-100">
+                <i class="fa-solid fa-table-tennis-paddle-ball"></i>
+            </div>
+            <span class="text-[10px] font-bold mt-2 text-gray-500">Tennis</span>
         </div>
-    </div>
+    </section>
 
-    <div class="mt-2">
-        <div class="league-title">
+    <div class="section-container">
+        <div class="bg-yellow-400 px-4 py-3 flex justify-between items-center">
             <div class="flex items-center gap-2">
-                <i class="fa-solid fa-baseball"></i>
-                <span>Indian Premier League</span>
+                <i class="fa-solid fa-medal text-sm"></i>
+                <h3 class="font-black text-sm uppercase">Indian Premier League</h3>
             </div>
-            <i class="fa-solid fa-chevron-down"></i>
+            <i class="fa-solid fa-chevron-right text-xs"></i>
+        </div>
+        
+        <div class="flex justify-between px-4 py-2 bg-gray-50 text-[10px] font-black text-gray-400">
+            <span>Market Matched: 1,341,204.22</span>
+            <div class="flex gap-12 pr-4"><span>Back</span><span>Lay</span></div>
         </div>
 
-        <div class="match-card border-b border-[#2a5555]">
-            <div class="flex justify-between items-center mb-1">
-                <div class="text-[10px] text-gray-400">Matched: 1,341,204</div>
-                <div class="flex gap-14 pr-4 text-[10px] font-bold text-gray-400">
-                    <span>Back</span>
-                    <span>Lay</span>
+        <div class="divide-y divide-gray-100">
+            <div class="flex items-center justify-between p-3">
+                <div class="flex flex-col">
+                    <span class="font-bold text-sm text-gray-700">Mumbai Indians</span>
+                    <span class="text-[9px] text-blue-500 font-bold">LIVE • 15.2 Overs</span>
+                </div>
+                <div class="flex gap-2">
+                    <div class="btn-odds bg-back"><span>9.8</span><span class="text-[8px] opacity-60">5.42</span></div>
+                    <div class="btn-odds bg-lay"><span>10</span><span class="text-[8px] opacity-60">858</span></div>
                 </div>
             </div>
-            <div class="flex justify-between items-center">
-                <div class="font-bold text-sm">Mumbai Indians</div>
-                <div class="flex gap-1">
-                    <div class="bet-button back">
-                        <span class="odds-val">9.8</span>
-                        <span class="matched-vol">5.42</span>
-                    </div>
-                    <div class="bet-button lay">
-                        <span class="odds-val">10</span>
-                        <span class="matched-vol">858.46</span>
-                    </div>
+            <div class="flex items-center justify-between p-3">
+                <div class="flex flex-col">
+                    <span class="font-bold text-sm text-gray-700">Chennai Super Kings</span>
+                    <span class="text-[9px] text-gray-400">Scheduled: 19:30</span>
                 </div>
-            </div>
-        </div>
-
-        <div class="match-card">
-            <div class="flex justify-between items-center">
-                <div class="font-bold text-sm">Chennai Super Kings</div>
-                <div class="flex gap-1">
-                    <div class="bet-button back">
-                        <span class="odds-val">3.85</span>
-                        <span class="matched-vol">933.85</span>
-                    </div>
-                    <div class="bet-button lay">
-                        <span class="odds-val">3.9</span>
-                        <span class="matched-vol">501.2</span>
-                    </div>
+                <div class="flex gap-2">
+                    <div class="btn-odds bg-back"><span>1.85</span><span class="text-[8px] opacity-60">2.1K</span></div>
+                    <div class="btn-odds bg-lay"><span>1.92</span><span class="text-[8px] opacity-60">500</span></div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="p-3">
-        <h3 class="text-sm font-bold border-l-4 border-green-500 pl-2 mb-3">Favourites</h3>
-        <div class="grid grid-cols-2 gap-3">
-            <div class="casino-item">
-                <img src="https://via.placeholder.com/200x120/800000/ffffff?text=AVIATOR" class="casino-img">
-                <div class="casino-label">Aviator</div>
+    <section class="section-container p-4">
+        <h3 class="text-sm font-black uppercase mb-4 border-l-4 border-green-600 pl-2">Live Casino</h3>
+        <div class="grid grid-cols-2 gap-4">
+            <div class="flex flex-col gap-2">
+                <div class="bg-red-700 card-img flex items-center justify-center text-white font-black text-xl italic shadow-md">AVIATOR</div>
+                <span class="text-[11px] font-bold text-center">Spribe Aviator</span>
             </div>
-            <div class="casino-item">
-                <img src="https://via.placeholder.com/200x120/4b0082/ffffff?text=CRAZY+TIME" class="casino-img">
-                <div class="casino-label">Crazy Time</div>
+            <div class="flex flex-col gap-2">
+                <div class="bg-blue-900 card-img flex items-center justify-center text-white font-black text-xl italic shadow-md">EVOLUTION</div>
+                <span class="text-[11px] font-bold text-center">Crazy Time</span>
+            </div>
+            <div class="flex flex-col gap-2">
+                <div class="bg-indigo-800 card-img flex items-center justify-center text-white font-black text-xl italic shadow-md">SLOTS</div>
+                <span class="text-[11px] font-bold text-center">Jili Slots</span>
+            </div>
+            <div class="flex flex-col gap-2">
+                <div class="bg-emerald-800 card-img flex items-center justify-center text-white font-black text-xl italic shadow-md">FISHING</div>
+                <span class="text-[11px] font-bold text-center">Ocean King</span>
             </div>
         </div>
+        <button class="w-full mt-6 py-3 border border-gray-200 rounded-lg text-xs font-black text-gray-400 uppercase tracking-widest">Show More Games</button>
+    </section>
+
+    <section class="section-container p-6 bg-white">
+        <h4 class="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] mb-4">Official Payment Partners</h4>
+        <div class="grid grid-cols-4 gap-4 opacity-70">
+            <div class="h-10 bg-gray-50 border border-gray-100 rounded flex items-center justify-center text-[10px] font-black text-pink-600">BKASH</div>
+            <div class="h-10 bg-gray-50 border border-gray-100 rounded flex items-center justify-center text-[10px] font-black text-orange-500">NAGAD</div>
+            <div class="h-10 bg-gray-50 border border-gray-100 rounded flex items-center justify-center text-[10px] font-black text-purple-600">ROCKET</div>
+            <div class="h-10 bg-gray-50 border border-gray-100 rounded flex items-center justify-center text-[10px] font-black text-blue-500">UPAY</div>
+        </div>
+    </section>
+
+    <footer class="bg-white mt-2 p-8 border-t">
+        <div class="flex flex-wrap justify-center gap-6 text-[10px] font-black text-gray-400 uppercase mb-8">
+            <a href="#">About</a>
+            <a href="#">Responsible Gaming</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">FAQ</a>
+        </div>
+        <div class="flex justify-center gap-8 mb-8 opacity-30">
+            <i class="fa-brands fa-facebook text-2xl"></i>
+            <i class="fa-brands fa-telegram text-2xl"></i>
+            <i class="fa-brands fa-instagram text-2xl"></i>
+        </div>
+        <p class="text-center text-[10px] text-gray-300 font-bold uppercase tracking-widest">© 2026 BAJIFAIR. Verified Exchange.</p>
+    </footer>
+
+    <div class="fixed bottom-24 right-4 flex flex-col gap-4">
+        <div class="w-14 h-14 bg-white rounded-full shadow-2xl flex items-center justify-center border-2 border-yellow-400 animate-bounce">
+            <i class="fa-solid fa-gamepad text-2xl text-red-500"></i>
+        </div>
+        <div class="w-16 h-16 bg-green-500 rounded-full shadow-2xl flex items-center justify-center text-white text-3xl">
+            <i class="fa-solid fa-comment-dots"></i>
+        </div>
     </div>
 
-    <div class="payment-footer">
-        <div class="flex justify-between mb-4">
-            <div class="text-[10px] font-bold text-gray-400">Gaming License</div>
-            <div class="text-[10px] font-bold text-gray-400">Responsible Gaming</div>
+    <nav class="fixed bottom-0 left-0 right-0 bg-white border-t h-16 flex justify-around items-center px-4 z-[1001] shadow-[0_-2px_10px_rgba(0,0,0,0.05)]">
+        <div class="flex flex-col items-center text-green-600">
+            <i class="fa-solid fa-house-chimney text-lg"></i>
+            <span class="text-[9px] font-black uppercase mt-1">Home</span>
         </div>
-        <div class="payment-grid">
-            <div class="bg-white/10 h-8 rounded flex items-center justify-center text-[8px] font-bold">BKASH</div>
-            <div class="bg-white/10 h-8 rounded flex items-center justify-center text-[8px] font-bold">NAGAD</div>
-            <div class="bg-white/10 h-8 rounded flex items-center justify-center text-[8px] font-bold">ROCKET</div>
-            <div class="bg-white/10 h-8 rounded flex items-center justify-center text-[8px] font-bold">UPAY</div>
+        <div class="flex flex-col items-center text-gray-400">
+            <i class="fa-solid fa-bolt text-lg"></i>
+            <span class="text-[9px] font-black uppercase mt-1">Live</span>
         </div>
-    </div>
-
-    <div class="floating-action">
-        <div class="f-icon"><img src="https://cdn-icons-png.flaticon.com/512/1055/1055823.png" class="w-8"></div>
-        <div class="f-icon bg-green-500 text-white text-2xl"><i class="fa-solid fa-comment-dots"></i></div>
-    </div>
-
-    <nav class="bottom-nav">
-        <div class="flex flex-col items-center text-yellow-500">
-            <i class="fa-solid fa-house"></i>
-            <span class="text-[10px] mt-1">Home</span>
+        <div class="flex flex-col items-center">
+            <div class="w-12 h-12 bg-green-500 rounded-full -mt-10 border-4 border-[#f1f4f4] shadow-lg flex items-center justify-center text-white">
+                <i class="fa-solid fa-plus text-xl"></i>
+            </div>
+            <span class="text-[9px] font-black uppercase mt-1 text-gray-400">Deposit</span>
         </div>
-        <div class="flex flex-col items-center text-gray-500">
-            <i class="fa-solid fa-bolt"></i>
-            <span class="text-[10px] mt-1">In-Play</span>
+        <div class="flex flex-col items-center text-gray-400">
+            <i class="fa-solid fa-wallet text-lg"></i>
+            <span class="text-[9px] font-black uppercase mt-1">Wallet</span>
         </div>
-        <div class="flex flex-col items-center text-gray-500">
-            <i class="fa-solid fa-wallet"></i>
-            <span class="text-[10px] mt-1">Wallet</span>
-        </div>
-        <div class="flex flex-col items-center text-gray-500">
-            <i class="fa-solid fa-user"></i>
-            <span class="text-[10px] mt-1">Account</span>
+        <div class="flex flex-col items-center text-gray-400">
+            <i class="fa-solid fa-user-gear text-lg"></i>
+            <span class="text-[9px] font-black uppercase mt-1">Profile</span>
         </div>
     </nav>
 
