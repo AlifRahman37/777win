@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>777Win | Leading Sports Exchange & Live Casino</title>
+    <title>777win | Leading Sports Exchange & Live Casino</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -27,15 +27,18 @@
             -webkit-font-smoothing: antialiased;
         }
 
+        /* Custom Scrollbar */
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
+        /* Navigation Glassmorphism */
         .glass-nav {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid #e5e7eb;
         }
 
+        /* Betting Odds Style - Exact Match */
         .odds-box {
             width: 60px; height: 42px;
             display: flex; flex-direction: column;
@@ -49,6 +52,7 @@
         .odds-num { font-size: 14px; font-weight: 900; }
         .odds-vol { font-size: 8px; font-weight: 600; opacity: 0.7; }
 
+        /* Animation for Live Status */
         .live-dot {
             width: 6px; height: 6px;
             background-color: #ef4444;
@@ -62,6 +66,7 @@
             100% { transform: scale(1); opacity: 1; }
         }
 
+        /* Casino Card Styles */
         .casino-card {
             border-radius: 10px;
             overflow: hidden;
@@ -71,8 +76,10 @@
         }
         .casino-card:hover { transform: translateY(-5px); }
 
+        /* Section Spacing */
         .content-section { background: white; margin-top: 10px; border-bottom: 1px solid #e5e7eb; }
         
+        /* Floating Action Buttons */
         .fab-container { position: fixed; bottom: 85px; right: 20px; z-index: 1000; }
         .fab {
             width: 55px; height: 55px; border-radius: 50%;
@@ -88,11 +95,11 @@
     <header class="glass-nav sticky top-0 z-[2000] px-4 py-3 flex justify-between items-center">
         <div class="flex items-center gap-3">
             <i class="fa-solid fa-bars text-xl text-gray-600"></i>
-            <h1 class="text-2xl font-black italic tracking-tighter text-green-600">777WIN</h1>
+            <h1 class="text-2xl font-black italic tracking-tighter text-green-600">BAJIFAIR</h1>
         </div>
         <div class="flex gap-2">
-            <a href="signup.html" class="px-4 py-1.5 border-2 border-green-500 text-green-600 rounded-lg font-bold text-sm">Sign up</a>
-            <a href="login.html" class="px-4 py-1.5 bg-green-600 text-white rounded-lg font-bold text-sm shadow-lg shadow-green-200">Login</a>
+            <button class="px-4 py-1.5 border-2 border-green-500 text-green-600 rounded-lg font-bold text-sm">Sign up</button>
+            <button class="px-4 py-1.5 bg-green-600 text-white rounded-lg font-bold text-sm shadow-lg shadow-green-200">Login</button>
         </div>
     </header>
 
@@ -176,14 +183,34 @@
                     <div class="odds-box bg-lay"><span class="odds-num">2.46</span><span class="odds-vol">850</span></div>
                 </div>
             </div>
-            <div class="flex items-center justify-between p-4 border-b border-gray-50">
+            <div class="flex items-center justify-between p-4">
                 <div class="flex flex-col">
                     <span class="font-bold text-sm text-gray-700">Chennai Super Kings</span>
-                    <span class="text-[9px] text-gray-400 font-bold uppercase tracking-tight">Match Tomorrow 19:30</span>
+                    <span class="text-[9px] text-gray-400 font-bold">MATCH DELAYED</span>
                 </div>
                 <div class="flex gap-2">
                     <div class="odds-box bg-back"><span class="odds-num">1.82</span><span class="odds-vol">15K</span></div>
                     <div class="odds-box bg-lay"><span class="odds-num">1.85</span><span class="odds-vol">4.2K</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="bg-gray-800 px-4 py-3 flex justify-between items-center text-white">
+                <div class="flex items-center gap-2 font-black text-xs uppercase tracking-tight">
+                    <i class="fa-solid fa-futbol"></i>
+                    <span>English Premier League</span>
+                </div>
+                <i class="fa-solid fa-chevron-right text-[10px]"></i>
+            </div>
+            <div class="flex items-center justify-between p-4 border-b border-gray-50">
+                <div class="flex flex-col">
+                    <span class="font-bold text-sm text-gray-700">Manchester City vs Arsenal</span>
+                    <span class="text-[9px] text-green-600 font-bold uppercase">Today 22:00</span>
+                </div>
+                <div class="flex gap-2">
+                    <div class="odds-box bg-back"><span class="odds-num">1.9</span><span class="odds-vol">2M</span></div>
+                    <div class="odds-box bg-lay"><span class="odds-num">1.92</span><span class="odds-vol">500K</span></div>
                 </div>
             </div>
         </div>
@@ -199,6 +226,14 @@
             <div class="casino-card">
                 <img src="https://images.unsplash.com/photo-1606167668584-78701c57f13d?w=400&h=250&fit=crop" class="w-full h-28 object-cover">
                 <div class="p-2 text-center text-[11px] font-black uppercase tracking-tighter">Lighting Roulette</div>
+            </div>
+            <div class="casino-card">
+                <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=400&h=250&fit=crop" class="w-full h-28 object-cover">
+                <div class="p-2 text-center text-[11px] font-black uppercase tracking-tighter">Aviator Spribe</div>
+            </div>
+            <div class="casino-card">
+                <img src="https://images.unsplash.com/photo-1518133835878-5a93cc3f89e5?w=400&h=250&fit=crop" class="w-full h-28 object-cover">
+                <div class="p-2 text-center text-[11px] font-black uppercase tracking-tighter">777 Classic Slots</div>
             </div>
         </div>
         <button class="w-full mt-6 py-3 border-2 border-gray-100 rounded-xl text-xs font-black text-gray-400 uppercase tracking-widest hover:bg-gray-50 transition-all">Show All Games (250+)</button>
@@ -236,60 +271,68 @@
             <i class="fa-brands fa-instagram text-xl"></i>
         </div>
         <p class="text-[9px] text-gray-400 font-bold uppercase tracking-[0.3em] mb-4 leading-loose">
-            777WIN is operated by 777WIN Limited, Licensed and Regulated by the Gaming Authority.
+            Bajifair is operated by FairPlay Limited, Licensed and Regulated by the Gaming Authority.
         </p>
-        <p class="text-[9px] text-gray-300 font-bold uppercase">© 2026 777WIN ENTERTAINMENT.</p>
+        <p class="text-[9px] text-gray-300 font-bold uppercase">© 2026 BAJIFAIR ENTERTAINMENT.</p>
     </footer>
 
     <div class="fab-container">
         <div class="fab border-yellow-400 animate-bounce">
             <i class="fa-solid fa-dice text-2xl text-red-500"></i>
         </div>
-        <a href="https://t.me/yourusername" class="fab bg-green-500 text-white text-3xl shadow-green-200">
+        <div class="fab bg-green-500 text-white text-3xl shadow-green-200">
             <i class="fa-solid fa-comment-dots"></i>
-        </a>
+        </div>
     </div>
 
     <nav class="fixed bottom-0 left-0 right-0 bg-white border-t h-16 flex justify-around items-center px-4 z-[3000] shadow-[0_-5px_15px_rgba(0,0,0,0.05)]">
-        <a href="index.html" class="flex flex-col items-center text-green-600">
+        <div class="flex flex-col items-center text-green-600">
             <i class="fa-solid fa-house-chimney text-lg"></i>
             <span class="text-[9px] font-black uppercase mt-1">Home</span>
-        </a>
+        </div>
         <div class="flex flex-col items-center text-gray-400">
             <i class="fa-solid fa-bolt-lightning text-lg"></i>
             <span class="text-[9px] font-black uppercase mt-1">Live</span>
         </div>
         <div class="relative">
-            <a href="deposit.html" class="w-14 h-14 bg-green-500 rounded-full -mt-10 border-4 border-[#f0f2f5] flex items-center justify-center text-white shadow-xl shadow-green-200">
+            <div class="w-14 h-14 bg-green-500 rounded-full -mt-10 border-4 border-[#f0f2f5] flex items-center justify-center text-white shadow-xl shadow-green-200">
                 <i class="fa-solid fa-plus text-2xl"></i>
-            </a>
+            </div>
             <span class="text-[9px] font-black uppercase mt-1 text-gray-400 text-center block">Deposit</span>
         </div>
         <div class="flex flex-col items-center text-gray-400">
             <i class="fa-solid fa-wallet text-lg"></i>
             <span class="text-[9px] font-black uppercase mt-1">Wallet</span>
         </div>
-        <a href="profile.html" class="flex flex-col items-center text-gray-400">
+        <div class="flex flex-col items-center text-gray-400">
             <i class="fa-solid fa-user-gear text-lg"></i>
             <span class="text-[9px] font-black uppercase mt-1">Account</span>
-        </a>
+        </div>
     </nav>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
+        // Swiper Slider Init
         var swiper = new Swiper(".mySwiper", {
             pagination: { el: ".swiper-pagination", clickable: true },
             autoplay: { delay: 4000, disableOnInteraction: false },
             loop: true
         });
 
+        // Script to Inject More Rows for "Long Scroll" Feel
         const matchArea = document.getElementById('dynamic-content-area');
-        for (let i = 0; i < 4; i++) {
+        for (let i = 0; i < 5; i++) {
             const clone = matchArea.firstElementChild.cloneNode(true);
             matchArea.appendChild(clone);
         }
 
-        console.log("777WIN V1.0 - Ready");
+        const casinoArea = document.getElementById('casino-grid');
+        for (let i = 0; i < 4; i++) {
+            const clone = casinoArea.innerHTML;
+            casinoArea.innerHTML += clone;
+        }
+
+        console.log("powerd by Alif Rahman");
     </script>
 </body>
 </html>
