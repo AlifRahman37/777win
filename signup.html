@@ -1,20 +1,90 @@
-<div class="min-h-screen bg-[#f0f2f5] p-6 flex flex-col justify-center">
-    <div class="bg-white rounded-3xl p-8 shadow-xl">
-        <h2 class="text-3xl font-black text-green-600 italic mb-6">JOIN 777WIN</h2>
-        <form class="space-y-4">
-            <div>
-                <label class="text-[10px] font-black uppercase text-gray-400">Full Name</label>
-                <input type="text" class="w-full bg-gray-50 border-none rounded-xl p-4 mt-1 focus:ring-2 focus:ring-green-500" placeholder="Enter name">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Sign Up | BAJIFAIR</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Roboto', sans-serif; background-color: #f0f2f5; }
+        .glass-header { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid #e5e7eb; }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <header class="glass-header sticky top-0 z-50 px-4 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-2">
+            <a href="index.html text-gray-600"><i class="fa-solid fa-arrow-left text-xl"></i></a>
+            <h1 class="text-2xl font-black italic tracking-tighter text-green-600 ml-2">BAJIFAIR</h1>
+        </div>
+        <a href="login.html" class="text-sm font-bold text-green-600 uppercase">Login</a>
+    </header>
+
+    <main class="flex-grow flex items-center justify-center p-6">
+        <div class="w-full max-w-md bg-white rounded-[30px] shadow-2xl shadow-green-100/50 p-8">
+            <div class="mb-8">
+                <h2 class="text-3xl font-black text-gray-800 italic uppercase">Join Now</h2>
+                <p class="text-gray-400 text-xs font-bold mt-1 uppercase tracking-widest">Create your account to start winning</p>
             </div>
-            <div>
-                <label class="text-[10px] font-black uppercase text-gray-400">Phone Number</label>
-                <input type="tel" class="w-full bg-gray-50 border-none rounded-xl p-4 mt-1 focus:ring-2 focus:ring-green-500" placeholder="017xxxxxxxx">
+
+            <form action="#" method="POST" class="space-y-5">
+                <div>
+                    <label class="text-[10px] font-black uppercase text-gray-400 ml-1">Full Name</label>
+                    <div class="relative mt-1">
+                        <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-gray-400">
+                            <i class="fa-solid fa-user text-sm"></i>
+                        </span>
+                        <input type="text" required class="w-full bg-gray-50 border-2 border-gray-50 rounded-2xl py-4 pl-12 pr-4 focus:bg-white focus:border-green-500 focus:ring-0 transition-all outline-none text-sm font-medium" placeholder="Enter your full name">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="text-[10px] font-black uppercase text-gray-400 ml-1">Phone Number</label>
+                    <div class="relative mt-1">
+                        <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-gray-400">
+                            <i class="fa-solid fa-phone text-sm"></i>
+                        </span>
+                        <input type="tel" required class="w-full bg-gray-50 border-2 border-gray-50 rounded-2xl py-4 pl-12 pr-4 focus:bg-white focus:border-green-500 focus:ring-0 transition-all outline-none text-sm font-medium" placeholder="017XXXXXXXX">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="text-[10px] font-black uppercase text-gray-400 ml-1">Password</label>
+                    <div class="relative mt-1">
+                        <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-gray-400">
+                            <i class="fa-solid fa-lock text-sm"></i>
+                        </span>
+                        <input type="password" required class="w-full bg-gray-50 border-2 border-gray-50 rounded-2xl py-4 pl-12 pr-4 focus:bg-white focus:border-green-500 focus:ring-0 transition-all outline-none text-sm font-medium" placeholder="••••••••">
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-3 px-1">
+                    <input type="checkbox" required class="mt-1 rounded text-green-600 focus:ring-green-500 border-gray-300">
+                    <p class="text-[11px] text-gray-500 font-medium leading-tight">
+                        I confirm that I am over 18 years old and I agree to the 
+                        <a href="#" class="text-green-600 font-bold">Terms & Conditions</a>.
+                    </p>
+                </div>
+
+                <button type="submit" class="w-full bg-green-600 text-white font-black py-5 rounded-2xl shadow-xl shadow-green-200 uppercase tracking-widest text-sm hover:bg-green-700 active:scale-[0.98] transition-all mt-4">
+                    Create My Account
+                </button>
+            </form>
+
+            <div class="mt-8 text-center">
+                <p class="text-xs text-gray-400 font-bold uppercase tracking-tighter">
+                    Already have an account? 
+                    <a href="login.html" class="text-green-600 ml-1">Log in here</a>
+                </p>
             </div>
-            <div>
-                <label class="text-[10px] font-black uppercase text-gray-400">Password</label>
-                <input type="password" class="w-full bg-gray-50 border-none rounded-xl p-4 mt-1 focus:ring-2 focus:ring-green-500" placeholder="••••••••">
-            </div>
-            <button type="submit" class="w-full bg-green-600 text-white font-black py-4 rounded-xl shadow-lg shadow-green-100 uppercase tracking-widest mt-4">Create Account</button>
-        </form>
-    </div>
-</div>
+        </div>
+    </main>
+
+    <footer class="p-6 text-center">
+        <p class="text-[9px] text-gray-400 font-bold uppercase tracking-[0.2em]">© 2026 BAJIFAIR ENTERTAINMENT.</p>
+    </footer>
+
+</body>
+</html>
