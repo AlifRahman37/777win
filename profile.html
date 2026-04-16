@@ -1,68 +1,63 @@
-<div class="bg-[#1a2c38] text-white p-4 rounded-lg shadow-md max-w-md mx-auto">
+<div class="profile-container" style="background-color: #1a2c38; color: white; font-family: sans-serif; padding: 15px; border-radius: 10px; max-width: 400px; margin: auto;">
     
-    <div class="flex items-center justify-between mb-6">
-        <div class="flex items-center gap-3">
-            <div class="w-14 h-14 bg-gray-600 rounded-full flex items-center justify-center border-2 border-yellow-500">
-                <i class="fas fa-user text-2xl text-gray-300"></i>
+    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 50px; height: 50px; background: #34495e; border-radius: 50%; border: 2px solid #f39c12; display: flex; align-items: center; justify-content: center;">
+                <span style="font-size: 24px;">👤</span>
             </div>
             <div>
-                <h2 class="text-lg font-bold">ID: alif</h2>
-                <div class="flex items-center gap-1">
-                    <span class="bg-[#f39c12] text-[10px] px-2 py-0.5 rounded text-black font-bold uppercase">ভিআইপি</span>
-                    <span class="text-gray-400 text-sm">পয়েন্ট (VP) 0</span>
-                </div>
+                <div style="font-weight: bold; font-size: 16px;">ID: alif378</div>
+                <div style="font-size: 12px; color: #bdc3c7;">ভিআইপি পয়েন্ট (VP) <span style="color: #f39c12;">0</span></div>
             </div>
         </div>
-        <button class="bg-[#f39c12] text-black text-sm px-4 py-1 rounded font-bold shadow-lg">মাই ভি...</button>
+        <button style="background: #f39c12; border: none; padding: 5px 15px; border-radius: 5px; color: black; font-weight: bold; font-size: 12px;">মাই ভি...</button>
     </div>
 
-    <div class="grid grid-cols-2 gap-4 mb-6 bg-[#0f212e] p-3 rounded-lg border border-gray-700">
-        <div class="text-center border-r border-gray-700">
-            <p class="text-gray-400 text-xs flex justify-center items-center gap-1">
-                মেইন ওয়ালেট <i class="fas fa-sync-alt text-[10px]"></i>
-            </p>
-            <p class="text-xl font-bold mt-1">৳ ০</p>
+    <div style="display: grid; grid-cols: 2; grid-template-columns: 1fr 1fr; gap: 10px; background: #0f212e; padding: 15px; border-radius: 8px; margin-bottom: 20px; text-align: center; border: 1px solid #2c3e50;">
+        <div style="border-right: 1px solid #2c3e50;">
+            <div style="font-size: 12px; color: #95a5a6;">মেইন ওয়ালেট 🔄</div>
+            <div style="font-size: 18px; font-weight: bold; margin-top: 5px;">৳ ০</div>
         </div>
-        <div class="text-center">
-            <p class="text-gray-400 text-xs flex justify-center items-center gap-1">
-                বোনাস ওয়ালেট <i class="fas fa-sync-alt text-[10px]"></i>
-            </p>
-            <p class="text-xl font-bold mt-1 text-yellow-500">৳ ০</p>
+        <div>
+            <div style="font-size: 12px; color: #95a5a6;">বোনাস ওয়ালেট 🔄</div>
+            <div style="font-size: 18px; font-weight: bold; margin-top: 5px; color: #f39c12;">৳ ০</div>
         </div>
     </div>
 
-    <div class="space-y-6">
+    <div style="display: flex; flex-direction: column; gap: 20px;">
         
-        <section>
-            <h3 class="text-sm font-semibold border-l-4 border-yellow-500 pl-2 mb-4">তহবিল</h3>
-            <div class="grid grid-cols-4 gap-4 text-center">
-                <div class="flex flex-col items-center">
-                    <div class="w-12 h-12 bg-[#2c3e50] rounded-full flex items-center justify-center mb-1 border border-gray-600">
-                        <i class="fas fa-wallet text-white text-lg"></i>
-                    </div>
-                    <span class="text-[11px]">ডিপোজিট</span>
-                </div>
-                <div class="flex flex-col items-center">
-                    <div class="w-12 h-12 bg-[#2c3e50] rounded-full flex items-center justify-center mb-1 border border-gray-600">
-                        <i class="fas fa-hand-holding-usd text-white text-lg"></i>
-                    </div>
-                    <span class="text-[11px]">উইথড্র</span>
-                </div>
-                </div>
-        </section>
-
-        <section>
-            <h3 class="text-sm font-semibold border-l-4 border-yellow-500 pl-2 mb-4">আমার প্রচার</h3>
-            <div class="grid grid-cols-4 gap-4 text-center text-xs">
-                <div class="relative flex flex-col items-center">
-                    <div class="w-12 h-12 bg-[#2c3e50] rounded-full flex items-center justify-center mb-1 border border-gray-600">
-                        <i class="fas fa-calendar-alt text-white"></i>
-                    </div>
-                    <span class="text-[11px]">দৈনিক স্ট্রিক</span>
-                    <span class="absolute top-0 right-2 bg-red-600 text-[9px] rounded-full px-1">!</span>
-                </div>
+        <div class="menu-group">
+            <h3 style="font-size: 14px; border-left: 4px solid #f39c12; padding-left: 8px; margin-bottom: 15px;">তহবিল</h3>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; text-align: center; font-size: 11px;">
+                <div><div class="icon-box">💰</div>ডিপোজিট</div>
+                <div><div class="icon-box">🏧</div>উইথড্র</div>
+                <div><div class="icon-box">🎁</div>বোনাস</div>
+                <div><div class="icon-box">🎡</div>ফ্রি স্পিন</div>
             </div>
-        </section>
+        </div>
+
+        <div class="menu-group">
+            <h3 style="font-size: 14px; border-left: 4px solid #f39c12; padding-left: 8px; margin-bottom: 15px;">আমার প্রচার</h3>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; text-align: center; font-size: 11px;">
+                <div><div class="icon-box">💸</div>বোনাস</div>
+                <div><div class="icon-box">👥</div>রেফার</div>
+                <div><div class="icon-box">🏆</div>বিজয়ী</div>
+                <div style="position: relative;"><div class="icon-box">🔥</div>চ্যালেঞ্জ <span style="position: absolute; top: -5px; right: 10px; background: red; color: white; border-radius: 50%; padding: 0 4px; font-size: 9px;">!</span></div>
+            </div>
+        </div>
 
     </div>
 </div>
+
+<style>
+    .icon-box {
+        background: #2c3e50;
+        width: 45px;
+        height: 45px;
+        line-height: 45px;
+        border-radius: 50%;
+        margin: 0 auto 5px;
+        font-size: 20px;
+        border: 1px solid #34495e;
+    }
+</style>
