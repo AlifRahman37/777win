@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>777win | High-End Professional Betting & Casino Exchange</title>
+    </title> 777win | Leading Sports Exchange & Live Casino</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -13,101 +13,122 @@
     <style>
         :root {
             --primary-green: #00a859;
-            --bg-light: #f1f4f4;
-            --white: #ffffff;
+            --bg-body: #f0f2f5;
             --league-yellow: #f7bc15;
             --back-blue: #a5d9fe;
             --lay-pink: #f9d0d9;
-            --text-gray: #6b7280;
+            --dark-header: #ffffff;
         }
 
         body { 
             font-family: 'Roboto', sans-serif; 
-            background-color: var(--bg-light); 
-            margin: 0; padding: 0;
-            -webkit-tap-highlight-color: transparent;
+            background-color: var(--bg-body); 
+            color: #333;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* --- Scrollbar --- */
+        /* Custom Scrollbar */
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-        /* --- Custom Styles --- */
-        .sticky-top { position: sticky; top: 0; z-index: 1000; background: white; }
-        .tab-active { color: var(--primary-green); border-bottom: 3px solid var(--primary-green); }
-        
-        /* Betting Buttons Styles (Exact Copy) */
+        /* Navigation Glassmorphism */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        /* Betting Odds Style - Exact Match */
         .odds-box {
-            width: 65px; height: 45px;
+            width: 60px; height: 42px;
             display: flex; flex-direction: column;
             align-items: center; justify-content: center;
-            border-radius: 4px; border: 1px solid rgba(0,0,0,0.04);
-            transition: all 0.2s; cursor: pointer;
+            border-radius: 4px; border: 1px solid rgba(0,0,0,0.03);
+            transition: all 0.1s ease-in-out;
         }
-        .odds-box:active { transform: scale(0.92); opacity: 0.8; }
+        .odds-box:active { transform: scale(0.9); }
         .bg-back { background-color: var(--back-blue); color: #0369a1; }
         .bg-lay { background-color: var(--lay-pink); color: #be185d; }
-        .odds-val { font-size: 14px; font-weight: 900; line-height: 1; }
-        .odds-vol { font-size: 8px; font-weight: 500; margin-top: 2px; opacity: 0.7; }
+        .odds-num { font-size: 14px; font-weight: 900; }
+        .odds-vol { font-size: 8px; font-weight: 600; opacity: 0.7; }
 
-        /* Section Styling */
-        .main-card { background: white; margin-top: 8px; border-bottom: 1px solid #e5e7eb; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
-        .section-header { background: var(--league-yellow); padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; }
+        /* Animation for Live Status */
+        .live-dot {
+            width: 6px; height: 6px;
+            background-color: #ef4444;
+            border-radius: 50%;
+            display: inline-block;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.5); opacity: 0.5; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Casino Card Styles */
+        .casino-card {
+            border-radius: 10px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .casino-card:hover { transform: translateY(-5px); }
+
+        /* Section Spacing */
+        .content-section { background: white; margin-top: 10px; border-bottom: 1px solid #e5e7eb; }
         
-        /* Floating Icons Animation */
-        .floating-container { position: fixed; bottom: 85px; right: 20px; z-index: 50; display: flex; flex-direction: column; gap: 12px; }
-        .icon-btn { width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: 0.3s; }
-        .icon-btn:hover { transform: translateY(-5px); }
-
-        /* Casino Banner Grids */
-        .casino-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 15px; }
-        .casino-item { border-radius: 12px; overflow: hidden; position: relative; height: 120px; }
-        .casino-item img { width: 100%; height: 100%; object-fit: cover; }
-        .casino-overlay { position: absolute; bottom: 0; width: 100%; background: linear-gradient(transparent, rgba(0,0,0,0.8)); padding: 8px; color: white; font-size: 12px; font-weight: 700; }
-
-        /* Bottom Nav */
-        .bottom-nav { position: fixed; bottom: 0; width: 100%; height: 65px; background: white; display: flex; justify-content: space-around; align-items: center; border-top: 1px solid #e5e7eb; z-index: 2000; box-shadow: 0 -2px 10px rgba(0,0,0,0.05); }
-        .nav-link { display: flex; flex-direction: column; align-items: center; font-size: 10px; font-weight: 700; color: #9ca3af; transition: 0.3s; }
-        .nav-link.active { color: var(--primary-green); }
+        /* Floating Action Buttons */
+        .fab-container { position: fixed; bottom: 85px; right: 20px; z-index: 1000; }
+        .fab {
+            width: 55px; height: 55px; border-radius: 50%;
+            background: white; display: flex; align-items: center;
+            justify-content: center; margin-top: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            border: 2px solid #fff;
+        }
     </style>
 </head>
 <body class="pb-20">
 
-    <header class="sticky-top flex items-center justify-between px-4 py-3 shadow-sm">
+    <header class="glass-nav sticky top-0 z-[2000] px-4 py-3 flex justify-between items-center">
         <div class="flex items-center gap-3">
-            <i class="fa-solid fa-bars text-xl text-gray-700"></i>
-            <span class="text-2xl font-black italic tracking-tighter text-green-600">BAJIFAIR</span>
+            <i class="fa-solid fa-bars text-xl text-gray-600"></i>
+            <h1 class="text-2xl font-black italic tracking-tighter text-green-600">BAJIFAIR</h1>
         </div>
         <div class="flex gap-2">
-            <button class="px-4 py-1.5 border border-green-600 text-green-600 rounded font-bold text-sm">Sign up</button>
-            <button class="px-4 py-1.5 bg-green-600 text-white rounded font-bold text-sm shadow-md">Login</button>
+            <button class="px-4 py-1.5 border-2 border-green-500 text-green-600 rounded-lg font-bold text-sm">Sign up</button>
+            <button class="px-4 py-1.5 bg-green-600 text-white rounded-lg font-bold text-sm shadow-lg shadow-green-200">Login</button>
         </div>
     </header>
 
-    <div class="bg-white border-b sticky top-[57px] z-[999] overflow-x-auto no-scrollbar flex px-2">
-        <button class="px-5 py-3 text-sm font-bold tab-active whitespace-nowrap">Live</button>
-        <button class="px-5 py-3 text-sm font-bold text-gray-500 whitespace-nowrap">Upcoming</button>
-        <button class="px-5 py-3 text-sm font-bold text-gray-500 whitespace-nowrap">Leagues</button>
-        <button class="px-5 py-3 text-sm font-bold text-gray-500 whitespace-nowrap">Parlay</button>
-        <button class="px-5 py-3 text-sm font-bold text-gray-500 whitespace-nowrap">Results</button>
-        <div class="flex items-center gap-4 ml-4 text-gray-400">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <i class="fa-solid fa-gear"></i>
-        </div>
-    </div>
+    <nav class="bg-white sticky top-[57px] z-[1999] border-b flex overflow-x-auto no-scrollbar">
+        <button class="px-6 py-3 text-sm font-black text-green-600 border-b-4 border-green-600 whitespace-nowrap">LIVE</button>
+        <button class="px-6 py-3 text-sm font-bold text-gray-400 whitespace-nowrap">UPCOMING</button>
+        <button class="px-6 py-3 text-sm font-bold text-gray-400 whitespace-nowrap">MY MARKETS</button>
+        <button class="px-6 py-3 text-sm font-bold text-gray-400 whitespace-nowrap">LEAGUES</button>
+        <button class="px-6 py-3 text-sm font-bold text-gray-400 whitespace-nowrap">PARLAY</button>
+    </nav>
 
     <div class="swiper mySwiper p-4 bg-white">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
-                <div class="h-44 rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-500 flex flex-col items-center justify-center text-white relative shadow-lg">
-                    <h2 class="text-3xl font-black italic drop-shadow-md uppercase">Big Punch</h2>
-                    <p class="text-yellow-300 font-bold text-lg">WIN HUGE PRIZES</p>
+                <div class="h-44 rounded-3xl bg-gradient-to-tr from-green-600 to-green-400 p-6 flex items-center justify-between text-white relative overflow-hidden">
+                    <div>
+                        <h4 class="text-xs font-bold uppercase tracking-widest opacity-80">Welcome Bonus</h4>
+                        <h2 class="text-4xl font-black italic leading-tight mt-1">BIG PUNCH<br><span class="text-yellow-300">WIN PRIZES</span></h2>
+                    </div>
+                    <i class="fa-solid fa-trophy text-7xl opacity-20 absolute -right-4 -bottom-4"></i>
                 </div>
             </div>
             <div class="swiper-slide">
-                <div class="h-44 rounded-2xl bg-gradient-to-br from-green-600 to-teal-500 flex flex-col items-center justify-center text-white relative shadow-lg">
-                    <h2 class="text-3xl font-black italic drop-shadow-md uppercase">Cricket Live</h2>
-                    <p class="text-yellow-200 font-bold text-lg">IPL 2026 SPECIAL</p>
+                <div class="h-44 rounded-3xl bg-gradient-to-tr from-blue-600 to-indigo-500 p-6 flex items-center justify-between text-white relative overflow-hidden">
+                    <div>
+                        <h4 class="text-xs font-bold uppercase tracking-widest opacity-80">Daily Cashback</h4>
+                        <h2 class="text-4xl font-black italic leading-tight mt-1">UNLIMITED<br><span class="text-cyan-300">5% RETURN</span></h2>
+                    </div>
+                    <i class="fa-solid fa-coins text-7xl opacity-20 absolute -right-4 -bottom-4"></i>
                 </div>
             </div>
         </div>
@@ -115,205 +136,203 @@
     </div>
 
     <section class="bg-white py-4 flex overflow-x-auto no-scrollbar gap-4 px-4 border-b">
-        <div class="flex flex-col items-center min-w-[70px]">
-            <div class="w-12 h-12 bg-pink-100 rounded-xl flex items-center justify-center text-pink-600 border border-pink-200"><i class="fa-solid fa-clover text-xl"></i></div>
-            <span class="text-[10px] font-bold mt-2 text-gray-500 uppercase">Casino</span>
+        <div class="flex flex-col items-center min-w-[75px]">
+            <div class="w-14 h-14 bg-pink-100 rounded-2xl flex items-center justify-center text-pink-600 border border-pink-200 shadow-sm"><i class="fa-solid fa-clover text-2xl"></i></div>
+            <span class="text-[10px] font-black mt-2 text-gray-500 uppercase tracking-tighter">Casino</span>
         </div>
-        <div class="flex flex-col items-center min-w-[70px]">
-            <div class="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center text-white shadow-lg"><i class="fa-solid fa-trophy text-xl"></i></div>
-            <span class="text-[10px] font-bold mt-2 text-green-600 uppercase">All</span>
+        <div class="flex flex-col items-center min-w-[75px]">
+            <div class="w-14 h-14 bg-green-600 rounded-2xl flex items-center justify-center text-white shadow-xl shadow-green-100"><i class="fa-solid fa-trophy text-2xl"></i></div>
+            <span class="text-[10px] font-black mt-2 text-green-600 uppercase tracking-tighter">All Sports</span>
         </div>
-        <div class="flex flex-col items-center min-w-[70px]">
-            <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-gray-400 border border-gray-100"><i class="fa-solid fa-baseball-bat-ball text-xl"></i></div>
-            <span class="text-[10px] font-bold mt-2 text-gray-500 uppercase">Cricket</span>
+        <div class="flex flex-col items-center min-w-[75px]">
+            <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-gray-400 border border-gray-100 shadow-sm"><i class="fa-solid fa-baseball-bat-ball text-2xl"></i></div>
+            <span class="text-[10px] font-black mt-2 text-gray-500 uppercase tracking-tighter">Cricket</span>
         </div>
-        <div class="flex flex-col items-center min-w-[70px]">
-            <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-gray-400 border border-gray-100"><i class="fa-solid fa-futbol text-xl"></i></div>
-            <span class="text-[10px] font-bold mt-2 text-gray-500 uppercase">Soccer</span>
+        <div class="flex flex-col items-center min-w-[75px]">
+            <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-gray-400 border border-gray-100 shadow-sm"><i class="fa-solid fa-futbol text-2xl"></i></div>
+            <span class="text-[10px] font-black mt-2 text-gray-500 uppercase tracking-tighter">Soccer</span>
         </div>
-        <div class="flex flex-col items-center min-w-[70px]">
-            <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-gray-400 border border-gray-100"><i class="fa-solid fa-chess-queen text-xl"></i></div>
-            <span class="text-[10px] font-bold mt-2 text-gray-500 uppercase">E-Games</span>
+        <div class="flex flex-col items-center min-w-[75px]">
+            <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-gray-400 border border-gray-100 shadow-sm"><i class="fa-solid fa-chess-king text-2xl"></i></div>
+            <span class="text-[10px] font-black mt-2 text-gray-500 uppercase tracking-tighter">E-Games</span>
         </div>
     </section>
 
-    <div id="matches-container">
-        <div class="main-card">
-            <div class="section-header">
+    <div id="dynamic-content-area">
+        <div class="content-section">
+            <div class="bg-yellow-400 px-4 py-3 flex justify-between items-center">
                 <div class="flex items-center gap-2 font-black text-xs uppercase tracking-tight text-gray-900">
-                    <i class="fa-solid fa-baseball"></i>
-                    <span>Indian Premier League</span>
+                    <i class="fa-solid fa-medal"></i>
+                    <span>Indian Premier League (IPL)</span>
                 </div>
                 <i class="fa-solid fa-chevron-right text-[10px]"></i>
             </div>
+            
             <div class="flex justify-between px-4 py-2 bg-gray-50 text-[10px] font-black text-gray-400 border-b">
-                <span>Matched: 1,341,204.22</span>
+                <span>Total Matched: 1,341,204.22</span>
                 <div class="flex gap-14 pr-4"><span>Back</span><span>Lay</span></div>
             </div>
-            
-            <div class="flex items-center justify-between p-3 border-b border-gray-50">
-                <div class="flex flex-col max-w-[50%]">
+
+            <div class="flex items-center justify-between p-4 border-b border-gray-50">
+                <div class="flex flex-col">
                     <span class="font-bold text-sm text-gray-700">Mumbai Indians</span>
-                    <span class="text-[9px] text-orange-500 font-bold flex items-center gap-1">
-                        <span class="w-1 h-1 bg-orange-500 rounded-full animate-pulse"></span> IN-PLAY
-                    </span>
+                    <span class="text-[9px] text-orange-500 font-bold flex items-center gap-1"><span class="live-dot"></span> LIVE NOW</span>
                 </div>
                 <div class="flex gap-2">
-                    <div class="odds-box bg-back"><span class="odds-val">10.5</span><span class="odds-vol">2.4K</span></div>
-                    <div class="odds-box bg-lay"><span class="odds-val">11</span><span class="odds-vol">850</span></div>
+                    <div class="odds-box bg-back"><span class="odds-num">2.44</span><span class="odds-vol">2.1K</span></div>
+                    <div class="odds-box bg-lay"><span class="odds-num">2.46</span><span class="odds-vol">850</span></div>
                 </div>
             </div>
-            
-            <div class="flex items-center justify-between p-3">
-                <div class="flex flex-col max-w-[50%]">
+            <div class="flex items-center justify-between p-4">
+                <div class="flex flex-col">
                     <span class="font-bold text-sm text-gray-700">Chennai Super Kings</span>
-                    <span class="text-[9px] text-gray-400 font-bold uppercase">Today 19:30</span>
+                    <span class="text-[9px] text-gray-400 font-bold">MATCH DELAYED</span>
                 </div>
                 <div class="flex gap-2">
-                    <div class="odds-box bg-back"><span class="odds-val">1.92</span><span class="odds-vol">50K</span></div>
-                    <div class="odds-box bg-lay"><span class="odds-val">1.95</span><span class="odds-vol">12K</span></div>
+                    <div class="odds-box bg-back"><span class="odds-num">1.82</span><span class="odds-vol">15K</span></div>
+                    <div class="odds-box bg-lay"><span class="odds-num">1.85</span><span class="odds-vol">4.2K</span></div>
                 </div>
             </div>
         </div>
 
-        <div class="main-card mt-2">
-            <div class="section-header bg-gray-800 !text-white">
+        <div class="content-section">
+            <div class="bg-gray-800 px-4 py-3 flex justify-between items-center text-white">
                 <div class="flex items-center gap-2 font-black text-xs uppercase tracking-tight">
                     <i class="fa-solid fa-futbol"></i>
                     <span>English Premier League</span>
                 </div>
                 <i class="fa-solid fa-chevron-right text-[10px]"></i>
             </div>
-            <div class="divide-y divide-gray-50">
-                <div class="flex items-center justify-between p-3">
-                    <span class="font-bold text-sm text-gray-700">Man City vs Arsenal</span>
-                    <div class="flex gap-2">
-                        <div class="odds-box bg-back"><span class="odds-val">2.1</span><span class="odds-vol">1M</span></div>
-                        <div class="odds-box bg-lay"><span class="odds-val">2.2</span><span class="odds-vol">500K</span></div>
-                    </div>
+            <div class="flex items-center justify-between p-4 border-b border-gray-50">
+                <div class="flex flex-col">
+                    <span class="font-bold text-sm text-gray-700">Manchester City vs Arsenal</span>
+                    <span class="text-[9px] text-green-600 font-bold uppercase">Today 22:00</span>
                 </div>
-                <div class="flex items-center justify-between p-3">
-                    <span class="font-bold text-sm text-gray-700">Liverpool vs Chelsea</span>
-                    <div class="flex gap-2">
-                        <div class="odds-box bg-back"><span class="odds-val">1.4</span><span class="odds-vol">2M</span></div>
-                        <div class="odds-box bg-lay"><span class="odds-val">1.45</span><span class="odds-vol">1.2M</span></div>
-                    </div>
+                <div class="flex gap-2">
+                    <div class="odds-box bg-back"><span class="odds-num">1.9</span><span class="odds-vol">2M</span></div>
+                    <div class="odds-box bg-lay"><span class="odds-num">1.92</span><span class="odds-vol">500K</span></div>
                 </div>
             </div>
         </div>
     </div>
 
-    <section class="main-card p-4">
-        <div class="flex justify-between items-center mb-4">
-            <h3 class="text-sm font-black border-l-4 border-green-600 pl-3 uppercase">Live Casino Highlights</h3>
-            <span class="text-[10px] font-bold text-green-600">VIEW ALL</span>
+    <section class="content-section p-4">
+        <h3 class="text-sm font-black uppercase mb-4 border-l-4 border-green-600 pl-3">Live Casino & Slots</h3>
+        <div class="grid grid-cols-2 gap-4" id="casino-grid">
+            <div class="casino-card">
+                <img src="https://images.unsplash.com/photo-1596838132731-3301c3fd4317?w=400&h=250&fit=crop" class="w-full h-28 object-cover">
+                <div class="p-2 text-center text-[11px] font-black uppercase tracking-tighter">Crazy Time Live</div>
+            </div>
+            <div class="casino-card">
+                <img src="https://images.unsplash.com/photo-1606167668584-78701c57f13d?w=400&h=250&fit=crop" class="w-full h-28 object-cover">
+                <div class="p-2 text-center text-[11px] font-black uppercase tracking-tighter">Lighting Roulette</div>
+            </div>
+            <div class="casino-card">
+                <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=400&h=250&fit=crop" class="w-full h-28 object-cover">
+                <div class="p-2 text-center text-[11px] font-black uppercase tracking-tighter">Aviator Spribe</div>
+            </div>
+            <div class="casino-card">
+                <img src="https://images.unsplash.com/photo-1518133835878-5a93cc3f89e5?w=400&h=250&fit=crop" class="w-full h-28 object-cover">
+                <div class="p-2 text-center text-[11px] font-black uppercase tracking-tighter">777 Classic Slots</div>
+            </div>
         </div>
-        <div class="casino-grid">
-            <div class="casino-item shadow-md border border-gray-100">
-                <img src="https://images.unsplash.com/photo-1511193311914-0346f16efe90?q=80&w=300&h=200&fit=crop" alt="Aviator">
-                <div class="casino-overlay uppercase italic">Aviator Spribe</div>
+        <button class="w-full mt-6 py-3 border-2 border-gray-100 rounded-xl text-xs font-black text-gray-400 uppercase tracking-widest hover:bg-gray-50 transition-all">Show All Games (250+)</button>
+    </section>
+
+    <section class="content-section p-6 bg-white text-center">
+        <h5 class="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-6">Payment Partners</h5>
+        <div class="grid grid-cols-4 gap-4 opacity-80">
+            <div class="flex flex-col items-center gap-1">
+                <div class="h-10 w-full bg-pink-50 rounded flex items-center justify-center font-black text-[9px] text-pink-600 border border-pink-100 italic">bKash</div>
             </div>
-            <div class="casino-item shadow-md border border-gray-100">
-                <img src="https://images.unsplash.com/photo-1596838132731-3301c3fd4317?q=80&w=300&h=200&fit=crop" alt="Crazy Time">
-                <div class="casino-overlay uppercase italic">Crazy Time Live</div>
+            <div class="flex flex-col items-center gap-1">
+                <div class="h-10 w-full bg-orange-50 rounded flex items-center justify-center font-black text-[9px] text-orange-500 border border-orange-100 italic">Nagad</div>
             </div>
-            <div class="casino-item shadow-md border border-gray-100">
-                <img src="https://images.unsplash.com/photo-1606167668584-78701c57f13d?q=80&w=300&h=200&fit=crop" alt="Evolution">
-                <div class="casino-overlay uppercase italic">Baccarat Master</div>
+            <div class="flex flex-col items-center gap-1">
+                <div class="h-10 w-full bg-purple-50 rounded flex items-center justify-center font-black text-[9px] text-purple-600 border border-purple-100 italic">Rocket</div>
             </div>
-            <div class="casino-item shadow-md border border-gray-100">
-                <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?q=80&w=300&h=200&fit=crop" alt="Slots">
-                <div class="casino-overlay uppercase italic">Golden Slots 777</div>
+            <div class="flex flex-col items-center gap-1">
+                <div class="h-10 w-full bg-blue-50 rounded flex items-center justify-center font-black text-[9px] text-blue-600 border border-blue-100 italic">Upay</div>
             </div>
         </div>
     </section>
 
-    <section class="px-6 py-8 text-gray-500 bg-white border-t">
-        <h4 class="text-sm font-black text-gray-800 mb-4 uppercase">About Bajifair Exchange</h4>
-        <p class="text-[11px] leading-relaxed mb-4">
-            Bajifair is the leading online sports betting and exchange platform in Bangladesh. We offer the best odds on Cricket, Soccer, Tennis, and more. Our platform is secured with SSL encryption to ensure your data is always safe.
-        </p>
-        <div class="grid grid-cols-2 gap-4 mt-6">
-            <ul class="text-[10px] font-bold space-y-2 uppercase">
-                <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Fast Withdrawals</li>
-                <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> 24/7 Live Support</li>
-            </ul>
-            <ul class="text-[10px] font-bold space-y-2 uppercase">
-                <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Secure Payments</li>
-                <li><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Best Odds</li>
-            </ul>
-        </div>
-    </section>
-
-    <section class="bg-gray-50 p-6 border-t">
-        <h5 class="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-4">Official Payment Partners</h5>
-        <div class="grid grid-cols-4 gap-4 mb-8">
-            <div class="h-10 bg-white border rounded flex items-center justify-center font-black text-[9px] text-pink-600 shadow-sm">BKASH</div>
-            <div class="h-10 bg-white border rounded flex items-center justify-center font-black text-[9px] text-orange-500 shadow-sm">NAGAD</div>
-            <div class="h-10 bg-white border rounded flex items-center justify-center font-black text-[9px] text-purple-600 shadow-sm">ROCKET</div>
-            <div class="h-10 bg-white border rounded flex items-center justify-center font-black text-[9px] text-blue-500 shadow-sm">UPAY</div>
-        </div>
-        
-        <div class="flex justify-center gap-6 mb-8 text-[10px] font-black text-gray-400 uppercase">
+    <footer class="bg-gray-50 mt-4 p-8 text-center border-t">
+        <div class="flex flex-wrap justify-center gap-6 text-[10px] font-black text-gray-400 uppercase tracking-tighter mb-8">
             <a href="#">About Us</a>
-            <a href="#">Privacy</a>
-            <a href="#">Terms</a>
-            <a href="#">FAQ</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">AML Policy</a>
+            <a href="#">Contact Us</a>
         </div>
-        <p class="text-center text-[9px] text-gray-300 font-bold uppercase tracking-[0.3em]">© 2026 Bajifair. All Rights Reserved.</p>
-    </section>
+        <div class="flex justify-center gap-6 mb-8 text-gray-300">
+            <i class="fa-brands fa-facebook-f text-xl"></i>
+            <i class="fa-brands fa-telegram text-xl"></i>
+            <i class="fa-brands fa-instagram text-xl"></i>
+        </div>
+        <p class="text-[9px] text-gray-400 font-bold uppercase tracking-[0.3em] mb-4 leading-loose">
+            Bajifair is operated by FairPlay Limited, Licensed and Regulated by the Gaming Authority.
+        </p>
+        <p class="text-[9px] text-gray-300 font-bold uppercase">© 2026 BAJIFAIR ENTERTAINMENT.</p>
+    </footer>
 
-    <div class="floating-container">
-        <div class="icon-btn bg-white border-2 border-yellow-400 animate-bounce">
-            <i class="fa-solid fa-dice-five text-2xl text-red-500"></i>
+    <div class="fab-container">
+        <div class="fab border-yellow-400 animate-bounce">
+            <i class="fa-solid fa-dice text-2xl text-red-500"></i>
         </div>
-        <div class="icon-btn bg-green-500 text-white text-3xl">
+        <div class="fab bg-green-500 text-white text-3xl shadow-green-200">
             <i class="fa-solid fa-comment-dots"></i>
         </div>
     </div>
 
-    <nav class="bottom-nav">
-        <a href="#" class="nav-link active">
-            <i class="fa-solid fa-house-chimney text-lg mb-1"></i>
-            <span>Home</span>
-        </a>
-        <a href="#" class="nav-link">
-            <i class="fa-solid fa-bolt-lightning text-lg mb-1"></i>
-            <span>In-Play</span>
-        </a>
-        <div class="relative -mt-10">
-            <div class="w-14 h-14 bg-green-500 rounded-full border-4 border-[#f1f4f4] flex items-center justify-center text-white text-2xl shadow-lg">
-                <i class="fa-solid fa-plus"></i>
-            </div>
-            <span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-bold text-gray-400 uppercase">Deposit</span>
+    <nav class="fixed bottom-0 left-0 right-0 bg-white border-t h-16 flex justify-around items-center px-4 z-[3000] shadow-[0_-5px_15px_rgba(0,0,0,0.05)]">
+        <div class="flex flex-col items-center text-green-600">
+            <i class="fa-solid fa-house-chimney text-lg"></i>
+            <span class="text-[9px] font-black uppercase mt-1">Home</span>
         </div>
-        <a href="#" class="nav-link">
-            <i class="fa-solid fa-wallet text-lg mb-1"></i>
-            <span>Wallet</span>
-        </a>
-        <a href="#" class="nav-link">
-            <i class="fa-solid fa-circle-user text-lg mb-1"></i>
-            <span>Account</span>
-        </a>
+        <div class="flex flex-col items-center text-gray-400">
+            <i class="fa-solid fa-bolt-lightning text-lg"></i>
+            <span class="text-[9px] font-black uppercase mt-1">Live</span>
+        </div>
+        <div class="relative">
+            <div class="w-14 h-14 bg-green-500 rounded-full -mt-10 border-4 border-[#f0f2f5] flex items-center justify-center text-white shadow-xl shadow-green-200">
+                <i class="fa-solid fa-plus text-2xl"></i>
+            </div>
+            <span class="text-[9px] font-black uppercase mt-1 text-gray-400 text-center block">Deposit</span>
+        </div>
+        <div class="flex flex-col items-center text-gray-400">
+            <i class="fa-solid fa-wallet text-lg"></i>
+            <span class="text-[9px] font-black uppercase mt-1">Wallet</span>
+        </div>
+        <div class="flex flex-col items-center text-gray-400">
+            <i class="fa-solid fa-user-gear text-lg"></i>
+            <span class="text-[9px] font-black uppercase mt-1">Account</span>
+        </div>
     </nav>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        // Initialize Banner Slider
+        // Swiper Slider Init
         var swiper = new Swiper(".mySwiper", {
             pagination: { el: ".swiper-pagination", clickable: true },
-            autoplay: { delay: 3000, disableOnInteraction: false },
+            autoplay: { delay: 4000, disableOnInteraction: false },
             loop: true
         });
 
-        // Dynamic Match Loading Logic (Simulating More Content for Scroll)
-        const container = document.getElementById('matches-container');
-        for(let i=0; i<3; i++) {
-            const clone = container.firstElementChild.cloneNode(true);
-            container.appendChild(clone);
+        // Script to Inject More Rows for "Long Scroll" Feel
+        const matchArea = document.getElementById('dynamic-content-area');
+        for (let i = 0; i < 5; i++) {
+            const clone = matchArea.firstElementChild.cloneNode(true);
+            matchArea.appendChild(clone);
         }
 
-        console.log("777win Frontend Core V1.0 - Production Ready");
+        const casinoArea = document.getElementById('casino-grid');
+        for (let i = 0; i < 4; i++) {
+            const clone = casinoArea.innerHTML;
+            casinoArea.innerHTML += clone;
+        }
+
+        console.log("777win V1.0 - Professional Live Site Engine Ready");
     </script>
 </body>
 </html>
